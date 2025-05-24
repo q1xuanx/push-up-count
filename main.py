@@ -2,8 +2,6 @@ import cv2
 import time
 from ultralytics import solutions
 
-
-    
 def main():
     camera = cv2.VideoCapture(0)
     assert camera.isOpened(), 'Error open camera'
@@ -33,7 +31,7 @@ def main():
         totals_push_up = results.workout_count[0]
         """
             If stage when push up is up -> then start calculate 
-            If time >= 2 then break and end the session
+            If time >= 5 then break and end the session
         """
         if all (stage == 'up' for stage in workout_stage):
             current_time = time.time()
